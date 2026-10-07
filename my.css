@@ -1,0 +1,145 @@
+/* styles.css - Simple, clean, responsive styles for the Registrar Document Request Tracker. */
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h2 { margin-top: 0; }
+
+/* ---------- Header and tabs ---------- */
+.app-header {
+  background: #1f3a5f;
+  color: #fff;
+  padding: 16px 16px 0;
+}
+
+.app-header h1 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tab-btn {
+  background: transparent;
+  color: #dbe6f5;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab-btn:hover { background: #2d4f7c; }
+
+/* The active tab looks attached to the page below */
+.tab-btn.active {
+  background: #f4f6f8;
+  color: #1f3a5f;
+  font-weight: bold;
+}
+
+/* ---------- Tab sections: only the active one is shown ---------- */
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+/* ---------- Cards, forms, and fields ---------- */
+.card {
+  background: #fff;
+  border: 1px solid #d9dee4;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+input, select, textarea {
+  padding: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #b8c0c9;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn {
+  background: #1f3a5f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover { background: #2d4f7c; }
+
+/* ---------- Message and result box ---------- */
+.message { margin-bottom: 16px; }          /* empty until a message is shown */
+.message.success { color: #1b6e2d; }
+.message.error   { color: #b3261e; }
+
+.result-box h3 { margin-top: 0; }
+
+/* ---------- Registrar filters ---------- */
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;              /* stacked on small screens */
+  gap: 0 16px;
+}
+
+/* ---------- Table ---------- */
+.table-wrap {
+  overflow-x: auto;                        /* scroll sideways on small screens */
+  background: #fff;
+  border: 1px solid #d9dee4;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e6e9ed;
+  font-size: 0.9rem;
+}
+
+th { background: #eef1f5; }
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 700px) {
+  .filters { grid-template-columns: 2fr 1fr 1fr; }
+  #request-form { max-width: 600px; }
+}
